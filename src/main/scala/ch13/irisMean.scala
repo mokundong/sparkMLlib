@@ -12,7 +12,7 @@ object irisMean {
     val conf = new SparkConf().setMaster("local").setAppName("irisMean")
     val sc = new SparkContext(conf)
 
-    val data = sc.textFile("d://work//Spark MLlib//data//Sepal.Length_setosa.txt")
+    val data = sc.textFile("E://work//Spark MLlib//data//Sepal.Length_setosa.txt")
     .map(_.toDouble)
     .map(line => Vectors.dense(line))
     val summary = Statistics.colStats(data)//计算统计量

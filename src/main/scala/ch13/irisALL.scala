@@ -12,7 +12,7 @@ object irisALL {
     val conf = new SparkConf().setMaster("local").setAppName("irisALL")
     val sc = new SparkContext(conf)
 
-    val data = sc.textFile("d://work//Spark MLlib//data//Sepal.Length.txt")
+    val data = sc.textFile("E://work//SparkMLlib//data//Sepal.Length.txt")
     .map(_.toDouble)
     .map(line => Vectors.dense(line))
     val summary = Statistics.colStats(data)//计算统计量
